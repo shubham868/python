@@ -1,0 +1,33 @@
+#getUniqueOrderStatus-
+
+DataPath = '/home/shubham/data/retail_db/orders/part-00000'
+orders = open(DataPath).read().splitlines()
+
+s = set([])
+for i in orders:
+    s.add(i.split(",")[3])
+for i in s:
+    print(i)
+
+
+#getCountByStatus-
+
+def getCountByStatus(orders,status):
+    count =0
+    for oi in orders:
+        if(oi.split(",")[3] == status):
+            count = count+1
+    return count
+orders = open('/home/shubham/data/retail_db/orders/part-00000').read().splitlines()
+getCountByStatus(orders,'PENDING_PAYMENT')
+
+
+
+#getCountByEachStatus-
+
+
+
+#
+
+
+
