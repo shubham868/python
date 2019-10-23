@@ -19,3 +19,20 @@ def add(*p):
 
 d = add(1,2,3,4,5)
 print(d)
+
+
+#Sum
+
+def sum(f,x,y):
+    total = 0
+    for i in range(x,y):
+        total += f(i)
+    return total
+sum(lambda a:a,3,6)
+12
+sum(lambda a:a*2,3,6)
+24
+sum(lambda a:a*a,3,6)
+50
+
+
