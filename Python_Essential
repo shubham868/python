@@ -1,0 +1,12 @@
+#SumInRange
+
+def Sum(x,y):
+    sum = 0
+    for i in range(x,y):
+        sum = sum + i;
+    return sum
+c = Sum(1,101)
+print(c)
+
+
+
