@@ -3,10 +3,19 @@
 def Sum(x,y):
     sum = 0
     for i in range(x,y):
-        sum = sum + i;
+        sum += i
     return sum
 c = Sum(1,101)
 print(c)
 
 
+#SumOfAnyNumbers
 
+def add(*p):
+    total = 0
+    for i in p:
+        total += i
+    return total
+
+d = add(1,2,3,4,5)
+print(d)
