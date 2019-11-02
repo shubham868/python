@@ -29,5 +29,33 @@ getCountByStatus(orders,'PENDING_PAYMENT')
 
 #
 
+#getrevenue by order_item_id
+
+data_file = open("home/data/retail_db/order_items/part-00000")
+data = data_file.read()
+order_items = data.splitlines()
+def get_order_revenue(order_items):
+    order_revenue = {}
+    for order_item in order_items:
+        order_item_order_id = int(order_item.split(",")[1])
+        order_item_order_subtotal = float(order_item.split(",")[4])
+        if(order_revenue.get(order_item_order_id):
+            order_revenue[order_item_order_id] = order_revenue.get(order_item_order_id) + order_item_order_subtota
+        else:
+            order_revenue[order_item_order_id] = order_item_order_subtotal
+        return order_revenue
+        
+>>>order_revenue = get_order_revenue(order_items)
+>>>order_revenue[4]
+>>>699.85
 
 
+#using pandas:
+
+import pandas as pd
+order_items = pd.read_csv("/home/shubham/data/retail_db/order_items/part-00000",
+header = None,
+names = ["order_item_id", "order_item_order_id", "order_item_product_id", "order_item_quantity", "order_item_subtotal", "order_item_product_price"],
+)
+order_items
+            
